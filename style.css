@@ -1,0 +1,23 @@
+
+.row {
+    margin-bottom: 122px;
+}
+h2 {
+    margin: 10px, 10px, 50px;
+}
+.colors {
+    display: flex;
+}
+.card {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 90px;
+    border-radius: 30px;
+}
+.card:not(:last-child) {
+    margin-right: 30px;
+}
+.red {
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ColorCard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        class Pallet {
+            constructor(txt, arr) {
+                this.name = txt;
+                this.colors = arr;
+            }
+        }
+        const colors = [
+            new Pallet("Основной цвет", ["#ED0EA4"]),
+            new Pallet("Тускло", ["#930064", "#73054F", "#4F0B39"]),
+            new Pallet("Светло", ["#983779", "#B22886", "#FF53C8"])
+        ];
+        for (const val of colors) {
+            console.log(val);
+            const row = document.createElement("div");
+            row.className = "row";
+
+            const caption = document.createElement("h2");
+            caption.innerText = val.name;
+            row.appendChild(caption);
+
+            const container = document.createElement("div");
+
+            val.colors.forEach((color) => {
+                const card = document.createElement("div");
+                card.className = "card";
+                card.innerText = color;
+                card.style.backgroundColor = color;
+                container.appendChild(card);
+            });
+
+            container.className = "colors";
+            row.appendChild(container);
+
+            document.body.appendChild(row);
+        }
+    </script>
+</body>
+</html>
